@@ -1,4 +1,4 @@
-package lesson3HW;
+package lesson3_1HW;
 
 //2 variables
 public class Task6 {

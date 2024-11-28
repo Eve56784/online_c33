@@ -1,4 +1,4 @@
-package lesson3HW;
+package lesson3_1HW;
 
 public class Task5 {
     public static void main(String[] args){

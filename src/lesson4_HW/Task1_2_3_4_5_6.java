@@ -95,4 +95,3 @@ public class Task1_2_3_4_5_6 {
         scanner.close();
     }
 }
-

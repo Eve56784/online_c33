@@ -128,7 +128,7 @@ public class GuessTheWord {
             }
 
             if (Arrays.equals(hiddenWord, openWord)) {
-                System.out.println("\u001B[31m C\u001B[38;5;208m o\u001B[33m n\u001B[32m g\u001B[34m r\u001B[38;5;75m a\u001B[35m t\u001B[36m s\u001B[0m ! You won!");
+                System.out.println("Congrats! You won!");
                 return;
             }
         }

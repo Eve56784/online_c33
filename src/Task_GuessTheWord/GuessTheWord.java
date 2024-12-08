@@ -121,7 +121,7 @@ public class GuessTheWord {
                     attempts--;
                 }
             } else if (userInput.equals(hiddenWordLower)) {
-                System.out.println("Congrats! You guessed the word: " + new String(hiddenWord));
+                System.out.println("Congrats! You've guessed the word: " + new String(hiddenWord));
                 return;
             } else {
                 attempts--;

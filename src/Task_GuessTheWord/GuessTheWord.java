@@ -63,7 +63,13 @@ public class GuessTheWord {
                 "Pocket Love",
                 "Solitaire",
                 "Undertale",
-                "Pony Town"
+                "Pony Town",
+                "League of Legends",
+                "Honor of Kings",
+                "Dark Deception",
+                "Romance Club",
+                "Character AI",
+                "The Sims"
         };
     }
 

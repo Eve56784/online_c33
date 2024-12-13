@@ -11,7 +11,8 @@ public class Task1 {
         }
 
         public void printCardInfo(){
-            System.out.println("\u001B[33mAcc number: \u001B[0m" + accountNumber + ". \u001B[33mCard balance: \u001B[0m" + cardBalance);
+            System.out.println("\u001B[33mAcc number: \u001B[0m" + accountNumber +
+                    ". \u001B[33mCard balance: \u001B[0m" + cardBalance);
         }
         public void deposit(double amount){
             if(amount<=0){
@@ -25,10 +26,12 @@ public class Task1 {
         }
         public void withdraw(double amount) {
             if (amount > cardBalance)
-                System.out.println("\u001B[31mAccount number: " + accountNumber + ": Insufficient funds. Try again.\u001B[0m");
+                System.out.println("\u001B[31mAccount number: " + accountNumber +
+                        ": Insufficient funds. Try again.\u001B[0m");
             else {
                 cardBalance-=amount;
-                System.out.println("Account number: " + accountNumber + "\n-" + amount + "$\nNew card balance: " + cardBalance + "$");
+                System.out.println("Account number: " + accountNumber + "\n-" + amount +
+                        "$\nNew card balance: " + cardBalance + "$");
             }
         }
     }

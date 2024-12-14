@@ -60,8 +60,8 @@ public class TicTacToe {
                         makePlayerMove(gameTable, 'X');
                         moveCount++;
                         if (checkGameStatus(gameTable, 'X')) {
-                            System.out.println("\u001b[32;1mYou have won!! ദി(˵ •̀ ᴗ - ˵ ) \" +\n" +
-                                    "\"✧\nDo you wanna play again? (y/n): \u001b[0m");
+                            System.out.println("\u001b[32;1mYou have won!! ദി(˵ •̀ ᴗ - ˵ )✧" +
+                                    "\nDo you wanna play again? (y/n): \u001b[0m");
                             win = true;
                             break;
                         }

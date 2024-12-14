@@ -60,8 +60,8 @@ public class TicTacToe {
                         makePlayerMove(gameTable, 'X');
                         moveCount++;
                         if (checkGameStatus(gameTable, 'X')) {
-                            System.out.println("\\u001b[32;1mYou have won!! ദി(˵ •̀ ᴗ - ˵ ) \" +\n" +
-                                    "\"✧\\nDo you wanna play again? (y/n): \\u001b[0m");
+                            System.out.println("\u001b[32;1mYou have won!! ദി(˵ •̀ ᴗ - ˵ ) \" +\n" +
+                                    "\"✧\nDo you wanna play again? (y/n): \u001b[0m");
                             win = true;
                             break;
                         }
@@ -84,8 +84,23 @@ public class TicTacToe {
 
 
     public static void getInitialMessage(){
-        System.out.print("\u001b[47m\u001b[30m");
-        System.out.println("!!![WIP]!!!\u001b[0m");
+        System.out.print("\u001b[36m");
+        System.out.println("""
+                The game is played on a 3x3 grid.
+                One player is 'X' and the other player is 'O'.\
+                
+                The goal is to be the first player to get three of your marks in a row (horizontally, vertically, or diagonally). \
+                
+                Players take turns placing their mark (X or O) in an empty cell. \
+                
+                The game continues until one player gets three marks in a row or all cells are filled.\
+                
+                A player wins by placing three of their marks in a row, column, or diagonal. \
+                
+                If all cells are filled and no player has three marks in a row, the game ends in a draw. \
+                
+                If the game ends in a win or draw, players can choose to start a new game.
+                \u001b[34mGOOD LUCK! (type y to start and n to exit)\u001b[0m""");
     }
 
     public static char[][] createInitializeTable(){

@@ -1,7 +1,7 @@
 package lesson9_HWTask2;
 
 public class Rectangle extends Figure{
-    private double height, side;
+    private final double height, side;
     public Rectangle(double height, double side){
         this.height=height;
         this.side=side;

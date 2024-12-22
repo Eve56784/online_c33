@@ -1,7 +1,7 @@
 package lesson9_HWTask2;
 
 public class Circle extends Figure{
-    private double radius;
+    private final double radius;
     public Circle(double radius){
         this.radius = radius;
     }

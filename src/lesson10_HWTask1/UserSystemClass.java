@@ -3,9 +3,9 @@ package lesson10_HWTask1;
 import java.util.Objects;
 
 public class UserSystemClass {
-    private String username;
-    private String phoneNumber;
-    private int age;
+    private final String username;
+    private final String phoneNumber;
+    private final int age;
 
     public UserSystemClass(String username, String phoneNumber, int age){
         this.username=username;
@@ -25,6 +25,8 @@ public class UserSystemClass {
     public boolean equals(Object object){
         if(this==object)
             return true;
+        if(object==null || getClass()!=object.getClass())
+            return false;
         UserSystemClass user = (UserSystemClass) object;
         return username.equals(user.username) && phoneNumber.equals(user.phoneNumber) && age==user.age;
     }

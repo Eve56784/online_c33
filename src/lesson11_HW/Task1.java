@@ -21,6 +21,21 @@ public class Task1 {
         System.out.println("-----------------------------");
         //task 1.3
         outputTask3(str1, str2, str3);
+        System.out.println("-----------------------------");
+        //task 1.4
+        if(checkChars(str1))
+            System.out.println("The first unique string is "+str1);
+        else if(checkChars(str2))
+            System.out.println("The first unique string is "+str2);
+        else if(checkChars(str3))
+            System.out.println("The first unique string is "+str3);
+        else
+            System.out.println("No unique string found");
+        System.out.println("-----------------------------");
+        //task 1.5
+        doubleLetter(str1);
+        doubleLetter(str2);
+        doubleLetter(str3);
     }
     public static void outputTask1(String string, int num){
         System.out.println("String"+num+" ("+string+") length is "+string.length());
@@ -52,5 +67,21 @@ public class Task1 {
             outputTask1(b, 2);
         if(c.length()<averageLength)
             outputTask1(c, 3);
+    }
+    public static boolean checkChars(String str){
+        boolean[] charArr = new boolean[65535];
+        for(int i=0; i<str.length();i++){
+            int val = str.charAt(i);
+            if(charArr[val])
+                return false;
+            charArr[val]=true;
+        }
+        return true;
+    }
+    public static void doubleLetter(String str){
+        for(int i =0; i<str.length(); i++){
+            System.out.print(""+str.charAt(i)+str.charAt(i));
+        }
+        System.out.print("\n");
     }
 }

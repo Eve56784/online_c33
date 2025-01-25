@@ -16,12 +16,12 @@ public class Task2 {
         }
     }
     public static boolean isDocNum(String word){
-
+        return word.matches("\\d{4}-\\d{4}-\\d{2}");
     }
     public static boolean isEMail(String word){
-
+        return word.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
     }
     public static boolean isPhoneNum(String word){
-
+        return word.matches("\\+\\(\\d{2}\\)\\d{8}");
     }
 }

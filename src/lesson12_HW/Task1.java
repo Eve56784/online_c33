@@ -1,5 +1,4 @@
 package lesson12_HW;
-
 import java.util.Scanner;
 
 public class Task1 {

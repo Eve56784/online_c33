@@ -11,7 +11,7 @@ public class Task2 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter string: ");
         String str = scanner.nextLine();
-        String[] splitStr = str.split(" ");
+        String[] splitStr = str.split("[ ,]+");
         do{
             System.out.print("Enter the number of the word you'd like to check: ");
             num = scanner.nextInt();

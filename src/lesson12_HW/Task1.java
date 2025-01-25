@@ -6,7 +6,7 @@ public class Task1 {
     public static void main(String[] args) {
         System.out.println("Enter string: ");
         String str = new Scanner(System.in).nextLine();
-        String[] words = str.split(" ");
+        String[] words = str.split("[ ,]+");
         for (String word : words){
             if(isAbbreviation(word))
                 System.out.println(word);

@@ -12,10 +12,10 @@ public class Task2 {
             return;
         }
         не смогла ввести с консоли путь к файлу*/
-        String invalidTXT = "C:\\Users\\mayia\\IdeaProjects\\project123\\src\\lesson14_HW\\InvalidNums";
-        String validTXT = "C:\\Users\\mayia\\IdeaProjects\\project123\\src\\lesson14_HW\\ValidNums";
+        String invalidTXT = "src/lesson14_HW/InvalidNums";
+        String validTXT = "src/lesson14_HW/ValidNums";
         //String inputFile = args[0];
-        try(Scanner scanner = new Scanner(new File("C:\\Users\\mayia\\IdeaProjects\\project123\\src\\lesson14_HW\\FileForTask2"))){
+        try(Scanner scanner = new Scanner(new File("src/lesson14_HW/FileForTask2"))){
             FileWriter fileWriterValid = new FileWriter(validTXT);
             FileWriter fileWriterInvalid = new FileWriter(invalidTXT);
             while (scanner.hasNextLine()){

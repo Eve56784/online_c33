@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
-        String output = "C:\\Users\\mayia\\IdeaProjects\\project123\\src\\lesson14_HW\\TextForTask1";
-        String input = "C:\\Users\\mayia\\IdeaProjects\\project123\\src\\lesson14_HW\\NewFileForTask1";
+        String output = "src/lesson14_HW/TextForTask1";
+        String input = "src/lesson14_HW/NewFileForTask1";
         String theLongestWord = "";
         try(Scanner scanner = new Scanner(new File(output))){
             while(scanner.hasNext()){

@@ -13,7 +13,7 @@ public class mainForPC {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(pc);
         } catch (IOException e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
         }
 
         try(FileInputStream fileInputStream = new FileInputStream("file.txt")) {

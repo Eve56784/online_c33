@@ -1,6 +1,6 @@
 package lesson15_HW;
 
-public class StudentMain3 {
+public class StudentMain {
     public static void main(String[] args) {
         Student.addStudent(new Student(2, 1, 4, 3, "470", "Leo"));
         Student.addStudent(new Student(7, 4, 6, 3, "473", "Teo"));

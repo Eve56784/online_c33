@@ -27,7 +27,6 @@ public class ArrayListSim <T>{
     public void remove(int index){
         if(index>=size||index<0)
             throw new IndexOutOfBoundsException();
-        T element = (T) elements[index];
         int numMove = size-index-1;
         if(numMove>0)
             System.arraycopy(elements, index+1, elements, index,numMove);

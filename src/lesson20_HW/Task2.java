@@ -3,6 +3,7 @@ package lesson20_HW;
 import java.util.Arrays;
 
 public class Task2 {
+
     private static int[] bubbleSort;
     private static int[] insertSort;
     private static int[] selectSort;

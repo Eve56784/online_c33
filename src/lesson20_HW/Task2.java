@@ -29,6 +29,14 @@ public class Task2 {
         bubbleSortT.start();
         insertSortT.start();
         selectSortT.start();
+
+        try {
+            bubbleSortT.join();
+            insertSortT.join();
+            selectSortT.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void bubbleSortMethod(int[] array) {

@@ -57,11 +57,11 @@ public class MyMain {
     }
 
     private static void loadFromFile() {
-        try(BufferedReader bufferedReader = new BufferedReader((new FileReader(fileName)))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
             String line;
-            while((line = bufferedReader.readLine())!=null){
-                String[] keyAndValue = line.split("[:\\-, ]", 2);
-                if(keyAndValue.length==2){
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] keyAndValue = line.split(" - ", 2);
+                if (keyAndValue.length == 2) {
                     dataMap.put(keyAndValue[0], keyAndValue[1]);
                 }
             }

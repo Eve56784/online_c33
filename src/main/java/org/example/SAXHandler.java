@@ -69,8 +69,9 @@ public class SAXHandler extends DefaultHandler {
             writer.write("\nTitle: " + title + "\n\n");
             writer.write("Lines:\n");
             writer.write(lines.toString());
+            System.out.println("Information was put in a file: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        }
+    }
 }

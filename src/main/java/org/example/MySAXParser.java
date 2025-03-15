@@ -27,7 +27,7 @@ class StudentHandler extends DefaultHandler {
     private StringBuilder text;
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
         currentElement = qName;
         text = new StringBuilder();
         if(qName.equalsIgnoreCase("students")){
@@ -37,7 +37,7 @@ class StudentHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         if(qName.equalsIgnoreCase("name"))
             System.out.println(text.toString().trim());
         else if(qName.equalsIgnoreCase("age"))
@@ -47,7 +47,7 @@ class StudentHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         if(text!=null)
             text.append(ch, start, length);
     }

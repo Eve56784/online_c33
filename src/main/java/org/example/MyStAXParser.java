@@ -15,7 +15,7 @@ public class MyStAXParser {
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLEventReader eventReader =
                   factory.createXMLEventReader(Files.newInputStream(Paths.get("src/main/resources/students.xml")));
-            String currentID = null;
+            String currentID;
             String currentElement = null;
             while(eventReader.hasNext()){
                 XMLEvent event = eventReader.nextEvent();

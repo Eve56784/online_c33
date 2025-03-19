@@ -1,4 +1,3 @@
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +9,7 @@ import java.io.IOException;
 public class DataServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         String data = request.getReader().lines()
                 .collect(java.util.stream.Collectors.joining());
 

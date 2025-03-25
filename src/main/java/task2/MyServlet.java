@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 2,
-        maxFileSize = 1024 * 1024 * 10,
+        maxFileSize = 1024 * 1024 * 100,
         maxRequestSize = 1024 * 1024 * 50
 )
 @WebServlet(name = "MyServlet", urlPatterns = {"/book", "/load-book"})
@@ -30,21 +30,22 @@ public class MyServlet extends HttpServlet {
         if ("/load-book".equals(servletPath)) {
             resp.setContentType("text/html;charset=UTF-8");
             PrintWriter out = resp.getWriter();
-            out.println("<!DOCTYPE html>");
-            out.println("<html lang=\"en\">");
-            out.println("<head>");
-            out.println("<meta charset=\"UTF-8\">");
-            out.println("<title>Upload a Book</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Upload a Book</h1>");
-            out.println("<form action=\"" + req.getContextPath() + "/load-book\" method=\"POST\" enctype=\"multipart/form-data\">");
-            out.println("<label for=\"file\">Choose a book file:</label>");
-            out.println("<input type=\"file\" name=\"file\" id=\"file\" required>");
-            out.println("<button type=\"submit\">Upload</button>");
-            out.println("</form>");
-            out.println("</body>");
-            out.println("</html>");
+            String html = "<!DOCTYPE html>" +
+                    "<html lang=\"en\">" +
+                    "<head>" +
+                    "<meta charset=\"UTF-8\">" +
+                    "<title>Upload a Book</title>" +
+                    "</head>" +
+                    "<body>" +
+                    "<h1>Upload a Book</h1>" +
+                    "<form action=\"" + req.getContextPath() + "/load-book\" method=\"POST\" enctype=\"multipart/form-data\">" +
+                    "<label for=\"file\">Choose a book file:</label>" +
+                    "<input type=\"file\" name=\"file\" id=\"file\" required>" +
+                    "<button type=\"submit\">Upload</button>" +
+                    "</form>" +
+                    "</body>" +
+                    "</html>";
+            out.println(html);
         } else if ("/book".equals(servletPath)) {
             String bookName = req.getParameter("bookName");
             if (bookName == null || bookName.isEmpty()) {

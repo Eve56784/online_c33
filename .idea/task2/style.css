@@ -1,6 +1,41 @@
-img{
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.text {
+    text-align: justify;
+    flex: 1;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.image {
+    width: 500px;
+}
+
+.imgDivider {
     width: 100%;
 }
-.imgInverted{
-    transform: rotateY(180deg);
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #1e0101;
+}
+h2 {
+    text-indent: 30px;
+    color: darkblue;
+}
+
+p{
+    text-indent: 30px;
 }

@@ -1,0 +1,6 @@
+img{
+    width: 100%;
+}
+.imgInverted{
+    transform: rotateY(180deg);
+}

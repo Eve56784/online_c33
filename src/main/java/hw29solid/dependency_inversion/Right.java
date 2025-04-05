@@ -1,4 +1,4 @@
-package hw29_solid.dependency_inversion;
+package hw29solid.dependency_inversion;
 
 interface Translator {
     void translate(String text);

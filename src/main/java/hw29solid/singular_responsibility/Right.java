@@ -1,4 +1,4 @@
-package hw29_solid.singular_responsibility;
+package hw29solid.singular_responsibility;
 
 public class Right {
     public static void main(String[] args) {

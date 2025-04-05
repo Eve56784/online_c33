@@ -1,4 +1,4 @@
-package hw29_solid.interface_segregation;
+package hw29solid.interface_segregation;
 
 interface ChineseService {
     void translateToChinese(String text);

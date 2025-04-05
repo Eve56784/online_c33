@@ -1,4 +1,4 @@
-package hw26_solid.open_closed;
+package hw29_solid.open_closed;
 
 abstract class ChineseAbstract {
     public abstract void execute(String input);

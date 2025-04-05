@@ -1,4 +1,4 @@
-package hw26_solid.liskov_substitution;
+package hw29_solid.liskov_substitution;
 
 abstract class LanguageProcessorRight {
     public abstract void process(String input);

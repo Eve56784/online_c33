@@ -1,4 +1,4 @@
-package hw26_solid.dependency_inversion;
+package hw29_solid.dependency_inversion;
 
 class ChineseTranslator {
     public void translate(String text) {

@@ -1,4 +1,4 @@
-package hw26_solid.liskov_substitution;
+package hw29_solid.liskov_substitution;
 
 class LanguageProcessor {
     public void process(String input) {

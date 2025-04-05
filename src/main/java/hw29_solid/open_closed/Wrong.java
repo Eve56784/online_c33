@@ -1,4 +1,4 @@
-package hw26_solid.open_closed;
+package hw29_solid.open_closed;
 
 public class Wrong {
     public static void main(String[] args) {

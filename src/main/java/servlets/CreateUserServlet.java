@@ -28,9 +28,13 @@ public class CreateUserServlet extends HttpServlet {
         user.setUsername(username);
         UserDB userDB = new UserDB();
         int result = userDB.createUser(user);
-        if(result>0)
+        if (result > 0){
             out.println("<h1>Success</h1>");
-        else
+        out.println("<p><a href='http://localhost:8080/postgresql_war/'>Return to HomePage</a></p>");
+    }
+        else {
             out.println("<h1>Error</h1>");
+            out.println("<p><a href='http://localhost:8080/postgresql_war/'>Return to HomePage</a></p>");
+        }
     }
 }

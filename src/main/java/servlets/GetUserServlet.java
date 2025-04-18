@@ -18,7 +18,7 @@ public class GetUserServlet extends HttpServlet {
         String idParam = req.getParameter("id");
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        if (idParam != null || idParam.isEmpty()) {
+        if (idParam == null || idParam.isEmpty()) {
             out.println("ID parameter is empty");
             return;
         }
@@ -35,9 +35,12 @@ public class GetUserServlet extends HttpServlet {
                                 "</body></html>",
                         user.getUsername(), user.getId(), user.getLogin());
                 out.println(html);
+                out.println("<p><a href='http://localhost:8080/postgresql_war/'>Return to HomePage</a></p>");
             }
-            else
+            else {
                 out.println("<h1>User not found</h1>");
+                out.println("<p><a href='http://localhost:8080/postgresql_war/'>Return to HomePage</a></p>");
+            }
         }
         catch(Exception e){
             System.out.println(e.getMessage());

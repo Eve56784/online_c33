@@ -8,15 +8,21 @@ public class UserDB {
     private final String url="jdbc:postgresql://localhost:5432/postgres";
     private final String username="postgres";
     private final String password="1234";
-
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Не удалось загрузить драйвер PostgreSQL: " + e.getMessage());
+        }
+    }
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
     }
 
     public User getUserById(int id) throws ClassNotFoundException {
+
         User user = null;
         String sql = "select * from users where id=?";
-        Class.forName("org.postgresql.Driver");
         try(Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();

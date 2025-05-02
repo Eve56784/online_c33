@@ -1,7 +1,7 @@
-CREATE TABLE tasks1 (
-                        id SERIAL PRIMARY KEY,
-                        name VARCHAR(255) NOT NULL
+create table tasks1 (
+                        id serial primary key,
+                        name varchar(255) not null
 );
 
-INSERT INTO tasks1 (name) VALUES ('Eva N.');
+insert into tasks1 (name) values ('Eva N.');
 

@@ -1,4 +1,6 @@
-package front.controller.controller;
+package front.controller.controller.impl;
+
+import front.controller.controller.HandleReq;
 
 public class UserController implements HandleReq {
     @Override

@@ -1,7 +1,7 @@
 package front.controller.dispatcher;
 
-import front.controller.controller.UserController;
-import front.controller.controller.AdminController;
+import front.controller.controller.impl.UserController;
+import front.controller.controller.impl.AdminController;
 
 public class Dispatcher {
     private AdminController adminController;

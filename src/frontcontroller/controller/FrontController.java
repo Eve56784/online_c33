@@ -1,6 +1,6 @@
-package front.controller.controller;
+package frontcontroller.controller;
 
-import front.controller.dispatcher.Dispatcher;
+import frontcontroller.dispatcher.Dispatcher;
 
 public class FrontController {
     private Dispatcher dispatcher;

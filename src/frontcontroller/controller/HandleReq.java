@@ -1,4 +1,4 @@
-package front.controller.controller;
+package frontcontroller.controller;
 
 public interface HandleReq {
     void handleReq();

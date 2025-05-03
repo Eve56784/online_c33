@@ -1,7 +1,7 @@
 import dto.dto.UserDto;
 import dto.entity.UserEntity;
 import dto.service.UserService;
-import front.controller.controller.FrontController;
+import frontcontroller.controller.FrontController;
 import sessionfacade.entity.Order;
 import sessionfacade.facade.impl.ShopFacadeImpl;
 

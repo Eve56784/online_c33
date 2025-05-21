@@ -5,5 +5,5 @@
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="simpleBean" class="XMLConfigBean"/>
+    <bean id="xmlConfigBean" class="XMLConfigBean" init-method="init" destroy-method="preDestroy"/>
 </beans>

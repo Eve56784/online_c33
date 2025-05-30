@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Metrics</title>
+</head>
+<body>
+<h1>Calculator Operations Metrics</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Operation</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="metric : ${metrics}">
+        <td th:text="${metric.key}"></td>
+        <td th:text="${metric.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Back to Calculator</a>
+</body>
+</html>

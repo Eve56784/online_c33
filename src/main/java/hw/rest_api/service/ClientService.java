@@ -22,10 +22,9 @@ public class ClientService {
         return clients.get(id);
     }
 
-    public Client addClient(String firstName, String lastName, String email) {
+    public void addClient(String firstName, String lastName, String email) {
         Long id = counter.getAndIncrement();
         Client client = new Client(id, firstName, lastName, email);
         clients.put(id, client);
-        return client;
     }
 }

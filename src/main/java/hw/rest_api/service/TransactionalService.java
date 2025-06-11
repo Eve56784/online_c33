@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Service
 public class TransactionalService {
-    private CardService cardService;
+    private final CardService cardService;
 
     public TransactionalService(CardService cardService) {
         this.cardService = cardService;

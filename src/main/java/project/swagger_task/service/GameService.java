@@ -31,8 +31,4 @@ public class GameService {
     public void delete(Long id) {
         repository.delete(id);
     }
-
-    public Game update(Game game) {
-        return repository.updateGame(game);
-    }
 }

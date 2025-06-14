@@ -10,18 +10,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "Main game model with free ID access")
-public class Game {
-    private Long id;
+@Schema(description = "Input model for updating a game")
+public class GameUpdate {
 
-    @NotBlank(message = "Title cant be empty")
+    @NotBlank
     @Pattern(regexp = "^[A-Za-z0-9А-Яа-я., ]{2,35}$",
             message = "Title should only contain eng/rus letters, digits, spaces, dots, and commas")
+    @Schema(description = "Updated title of the game", example = "StarDew Valley Updated", required = true)
     private String title;
 
-    @NotBlank(message = "Genre cant be empty")
+    @NotBlank
     @Pattern(regexp = "^[A-Za-zА-Яа-я., ]{2,25}$",
-    message = "Genre should only contain eng/rus letters, and spaces")
+            message = "Genre should only contain eng/rus letters, dots, commas, and spaces")
+    @Schema(description = "Updated genre of the game", example = "Farm, RPG, Fighting", required = true)
     private String genre;
 }
-

@@ -75,7 +75,7 @@ public class GameController {
             }
     )
     @PostMapping("/add")
-    public ResponseEntity<Game> addGame(@Valid @RequestBody GameInput gameInput) {
+    public ResponseEntity<Game> addGame(@Valid @org.springframework.web.bind.annotation.RequestBody GameInput gameInput) {
         Game game = new Game();
         game.setTitle(gameInput.getTitle());
         game.setGenre(gameInput.getGenre());
@@ -95,7 +95,7 @@ public class GameController {
     public ResponseEntity<Game> updateGame(
             @Parameter(description = "ID of the game", required = true)
             @PathVariable Long id,
-            @Valid @RequestBody GameUpdate gameUpdate) {
+            @Valid @org.springframework.web.bind.annotation.RequestBody GameUpdate gameUpdate) {
         if (gameService.getGame(id).isEmpty())
             return ResponseEntity.notFound().build();
 

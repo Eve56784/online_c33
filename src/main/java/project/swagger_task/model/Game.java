@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 public class Game {
 
     private Long id;
-
     @NotBlank(message = "Title cant be empty")
     @Pattern(regexp = "^[A-Za-z0-9А-Яа-я., ]{2,35}$",
             message = "Title should only contain eng/rus letters, digits, spaces, dots, and commas")

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Game {
+
     private Long id;
 
     @NotBlank(message = "Title cant be empty")

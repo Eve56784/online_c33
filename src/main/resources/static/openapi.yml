@@ -3,6 +3,7 @@ info:
   title: GameStore API
   description: Homework on Swagger||Game Store
   version: 1.0.0
+
 paths:
   /game-store:
     get:

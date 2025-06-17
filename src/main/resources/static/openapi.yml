@@ -1,6 +1,5 @@
 openapi: 3.0.3
 info:
-
   title: GameStore API
   description: Homework on Swagger||Game Store
   version: 1.0.0

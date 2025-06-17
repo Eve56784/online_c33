@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 public class GameRepository {
-
     private final Map<Long, Game> games = new HashMap<>();
     private final AtomicLong idGenerator = new AtomicLong(0);
 

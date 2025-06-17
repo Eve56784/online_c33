@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Schema(description = "Input model for creating (adding) a game")
 public class GameInput {
-
     @NotBlank
     @Pattern(regexp = "^[A-Za-z0-9А-Яа-я., ]{2,35}$",
             message = "Title should only contain eng/rus letters, digits, spaces, dots, and commas")

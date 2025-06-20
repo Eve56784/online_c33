@@ -6,8 +6,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,10 +19,8 @@ import java.util.List;
 @Tag(name = "Product shop api")
 public class ProductController {
     private final ProductRepository rep;
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     public ProductController(ProductRepository rep) {
-        log.debug("ProductController init");
         this.rep= rep;
     }
 
@@ -32,8 +28,7 @@ public class ProductController {
     @ApiResponse(responseCode = "200", description = "Success")
     @GetMapping
     public List<Product> getAllProducts() {
-        log.info("Get all products method");
-        return rep.getAllProducts();
+        return rep.findAll();
     }
 
     @Operation(summary = "Get product by ID method")
@@ -44,15 +39,9 @@ public class ProductController {
             })
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        if(rep.findById(id).isPresent()) {
-            log.info("Product with {} ID found", id);
-            return ResponseEntity.ok(rep.findById(id).get());
-        }
-        else{
-            log.info("GET: Product with {} ID not found", id);
-            return ResponseEntity.notFound().build();
-        }
-
+        return rep.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @Operation(summary = "Add product method")
@@ -64,8 +53,6 @@ public class ProductController {
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public Product addProduct(@Valid @RequestBody Product product) {
-        log.debug("Product ID: {}, {}, {}, {}, {} added",
-                product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getQuantity());
         return rep.save(product);
     }
 
@@ -78,7 +65,6 @@ public class ProductController {
             })
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id, @Valid @RequestBody Product updatedProduct) {
-        log.info("Product with ID {} updated", id);
         return rep.findById(id)
                 .map(existing -> {
                     updatedProduct.setId(id);
@@ -96,13 +82,11 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProductById(
             @PathVariable @Parameter(description = "Product ID", example = "1") Long id) {
-        if(rep.findById(id).isPresent()) {
-            rep.delete(id);
-            log.info("Product with ID {} deleted", id);
-            return ResponseEntity.noContent().build();
-        }
-        else
-            log.info("DELETE: Product with {} ID not found", id);
-        return ResponseEntity.notFound().build();
-    }
+        return rep.findById(id)
+                .map(product -> {
+                    rep.delete(product);
+                    return ResponseEntity.noContent().<Void>build();
+                })
+                .orElse(ResponseEntity.notFound().build());
+}
 }

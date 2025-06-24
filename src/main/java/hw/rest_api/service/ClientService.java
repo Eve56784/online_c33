@@ -3,13 +3,13 @@ package hw.rest_api.service;
 import hw.rest_api.model.Client;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class ClientService {
-    private final Map<Long, Client> clients = new HashMap<>();
+    private final Map<Long, Client> clients = new ConcurrentHashMap<>();
     private final AtomicLong counter = new AtomicLong(1);
 
     public ClientService (){

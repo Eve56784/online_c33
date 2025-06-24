@@ -4,12 +4,12 @@ import hw.rest_api.model.Card;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class CardService {
-    private final Map<String, Card> cards = new HashMap<>();
+    private final Map<String, Card> cards = new ConcurrentHashMap<>();
 
     public CardService(){
         cards.put("1111-5678-9123", new Card("1111-5678-9123", 1L, new BigDecimal("3000.55")));

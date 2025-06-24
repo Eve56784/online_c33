@@ -23,13 +23,16 @@ public class FileUploadController {
             File uploadDirFile = new File(projectDir + File.separator + "uploads");
 
             if (!uploadDirFile.exists()) {
-                uploadDirFile.mkdirs();
+                boolean isDirCreated = uploadDirFile.mkdirs();
+                if (!isDirCreated) {
+                    return ResponseEntity.internalServerError().body("Failed to create directory");
+                }
             }
 
             File dest = new File(uploadDirFile, file.getOriginalFilename());
             file.transferTo(dest);
 
-            return ResponseEntity.ok("File uploaded successfully: " + dest.getAbsolutePath());
+            return ResponseEntity.ok("File uploaded successfully: /uploads/" + file.getOriginalFilename());
         } catch (IOException e) {
             e.printStackTrace();
             return ResponseEntity.internalServerError().body("Error when uploading: " + e.getMessage());
